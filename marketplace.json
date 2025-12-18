@@ -5,7 +5,6 @@
     "image_uri": "https://marketplace-api.looker.com/block-icons/bq_new_icon.png",
     "tagline": "Build Explores that allow business users to create machine learning models for time-series forecasting."
   },
-
   "constants": {
     "CONNECTION_NAME": {
       "label": "Connection Name",
