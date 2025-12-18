@@ -1,29 +1,57 @@
-{
-  "label": "BigQuery ML Time-series Forecasting (ARIMA)",
-  "category_label": "Models",
-  "branding": {
-    "image_uri": "https://marketplace-api.looker.com/block-icons/bq_new_icon.png",
-    "tagline": "Build Explores that allow business users to create machine learning models for time-series forecasting."
-  },
+dashboard: google_analytics_forecast_dashboard {
+  title: "Google Analytics Forecast – ARIMA Insights"
+  description: "Forecasted sessions with confidence intervals using BigQuery ML ARIMA model"
+  layout: fluid
 
-  "constants": {
-    "CONNECTION_NAME": {
-      "label": "Connection Name",
-      "value_constraint": "connection"
-    },
-    "looker_temp_dataset_name": {
-      "label": "Looker Temp Dataset Name",
-      "description": "The temporary dataset for Looker PDTs must be located in the US multi-region location to use this block’s example Explore. If your default BigQuery connection uses a temporary dataset located outside of the US, ask your Looker Admin to create another BigQuery connection in Looker with the temporary dataset for PDTs located in the US."
-    }
-  },
-  "models": [
-    {
-      "name": "arima_model_info",
-      "connection_constant": "CONNECTION_NAME"
-    },
-    {
-      "name": "google_analytics_forecast",
-      "connection_constant": "CONNECTION_NAME"
-    }
-  ]
+  element {
+    title: "Forecast Line Chart"
+    type: line
+    explore: google_analytics_forecast
+    fields: [forecast_date, forecast_value]
+    series_labels: ["Forecasted Sessions"]
+    y_axis_labels: ["Sessions"]
+    x_axis_label: "Date"
+    listen: {}
+  }
+
+  element {
+    title: "Confidence Bands"
+    type: area
+    explore: google_analytics_forecast
+    fields: [forecast_date, confidence_interval_lower, confidence_interval_upper]
+    series_labels: ["Lower Bound", "Upper Bound"]
+    y_axis_labels: ["Confidence Range"]
+    x_axis_label: "Date"
+    listen: {}
+  }
+
+  element {
+    title: "Forecast Range KPI"
+    type: single_value
+    explore: google_analytics_forecast
+    fields: [forecast_range]
+    listen: {}
+  }
+
+  element {
+    title: "Average Forecast KPI"
+    type: single_value
+    explore: google_analytics_forecast
+    fields: [avg_forecast]
+    listen: {}
+  }
+
+  element {
+    title: "Forecast Table"
+    type: table
+    explore: google_analytics_forecast
+    fields: [forecast_date, forecast_value, confidence_interval_lower, confidence_interval_upper]
+    listen: {}
+  }
+
+  filter {
+    name: "Date Range"
+    type: date
+    field: forecast_date
+  }
 }
