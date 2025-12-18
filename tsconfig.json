@@ -7,11 +7,10 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": "./",
     "paths": {
-      "whatsauto/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "whatsauto/*": ["src/*"],
-      "whatsauto": ["src/index.ts"]
+      "whatsauto/_shims/auto/*": ["./src/_shims/auto/*-node"],
+      "whatsauto/*": ["./src/*"],
+      "whatsauto": ["./src/index.ts"]
     },
     "noEmit": true,
 

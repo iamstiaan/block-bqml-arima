@@ -1,18 +1,21 @@
 {
   "name": "whatsauto",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "The official TypeScript library for the Petstore API",
   "author": "Petstore <example@example.com>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:iamstiaan/Whatsauto",
+  "repository": "github:iamstiaan/block-bqml-arima",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.22",
   "files": [
     "**/*"
   ],
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "./scripts/test",
     "build": "./scripts/build",
@@ -58,10 +61,6 @@
     "./shims/web.js",
     "./shims/web.mjs"
   ],
-  "imports": {
-    "whatsauto": ".",
-    "whatsauto/*": "./src/*"
-  },
   "exports": {
     "./_shims/auto/*": {
       "deno": {

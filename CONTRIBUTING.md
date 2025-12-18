@@ -1,6 +1,6 @@
 ## Setting up the environment
 
-This repository uses [`yarn@v1`](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable).
+This repository uses [`yarn@v1`](https://classic.yarnpkg.com/lang/en/docs/install).
 Other package managers may work but are not officially supported for development.
 
 To set up the repository, run:
@@ -29,10 +29,10 @@ All files in the `examples/` directory are not modified by the generator and can
 …
 ```
 
-```
-chmod +x examples/<your-example>.ts
+```sh
+$ chmod +x examples/<your-example>.ts
 # run the example against your api
-yarn tsn -T examples/<your-example>.ts
+$ yarn tsn -T examples/<your-example>.ts
 ```
 
 ## Using the repository from source
@@ -42,15 +42,15 @@ If you’d like to use the repository from source, you can either install from g
 To install via git:
 
 ```sh
-$ npm install git+ssh://git@github.com:iamstiaan/Whatsauto.git
+$ npm install git+ssh://git@github.com:iamstiaan/block-bqml-arima.git
 ```
 
 Alternatively, to link a local copy of the repo:
 
 ```sh
 # Clone
-$ git clone https://www.github.com/iamstiaan/Whatsauto
-$ cd Whatsauto
+$ git clone https://www.github.com/iamstiaan/block-bqml-arima
+$ cd block-bqml-arima
 
 # With yarn
 $ yarn link
